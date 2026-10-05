@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<title>रोह पंचायत | विपेन्द्र प्रसाद सिन्हा (दिपु मेहता)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#f4f7fb;color:#263238}
+.page{display:none}.page.active{display:block}
+:root{--blue:#0756a8;--blue2:#0b6fc4;--navy:#063b73;--sky:#eaf4ff;--gold:#f5b400;--red:#d71920;--green:#16834a;--line:#dbe4ee}
+a{text-decoration:none;color:inherit}
+.portal-top{background:#062f5d;color:#fff;font-size:13px}
+.portal-top a:hover{text-decoration:underline}
+.portal-header{background:#fff;border-bottom:1px solid var(--line)}
+.portal-logo{display:flex;align-items:center;gap:14px}
+.logo-mark{display:none;width:62px;height:62px;border-radius:50%;background:#0756a8;color:#fff;display:grid;place-items:center;font-weight:900;font-size:25px;border:4px solid #e8f1fb;box-shadow:0 3px 12px #0001}
+.logo-title{font-size:26px;font-weight:900;color:#073b73;line-height:1.1}
+.logo-sub{font-size:13px;color:#64748b;margin-top:4px}
+.portal-nav{background:var(--blue);color:#fff;box-shadow:0 3px 10px #0002}
+.navlink{cursor:pointer;white-space:nowrap}
+.portal-nav .navlink{padding:13px 14px;font-weight:700;font-size:14px;border-right:1px solid #ffffff18}
+.portal-nav .navlink:hover{background:#06437f}
+.nav-active{background:#06437f}
+.notice-bar{background:#fff;border-bottom:1px solid var(--line)}
+.notice-label{background:#d71920;color:#fff;font-weight:900;padding:9px 14px}
+.notice-text{font-weight:700;color:#34495e}
+.hero{min-height:430px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(110deg,#064a91,#0876c9 55%,#0a5ca8)}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#043b75cc,#0877c988),radial-gradient(circle at 80% 30%,#fff2,transparent 35%)}
+.hero h1{text-shadow:0 2px 8px #0005}
+.hero-card{background:#ffffffee;border-radius:4px;padding:22px;box-shadow:0 8px 28px #002b552e}
+.profile-ring{box-shadow:0 0 0 7px #ffffff35,0 12px 35px #002b5555}
+.gold{color:#f5b400}
+.section-kicker{font-size:13px;font-weight:900;color:#0756a8;text-transform:uppercase;letter-spacing:.08em}
+.section-title{font-size:32px;font-weight:900;color:#17324d}
+.portal-section{padding:34px 0}
+.portal-card{background:#fff;border:1px solid var(--line);border-radius:4px;box-shadow:0 4px 15px #0b3a6810}
+.portal-card:hover{box-shadow:0 8px 22px #0b3a6820}
+.card-head{background:#f1f7fd;border-bottom:1px solid var(--line);padding:14px 18px;font-size:19px;font-weight:900;color:#064782}
+.card-body{padding:20px}
+.quick-card{border-top:4px solid var(--blue)}
+.quick-icon{width:45px;height:45px;border-radius:4px;background:#e9f3ff;color:#0756a8;display:grid;place-items:center;font-size:20px}
+.list-link{display:block;padding:11px 0;border-bottom:1px dashed #d9e2eb;color:#23415e;font-weight:700}
+.list-link:before{content:"›";color:#0756a8;font-weight:900;margin-right:8px}
+.list-link:last-child{border-bottom:0}
+.gallery-card{height:235px;border-radius:4px;overflow:hidden;background:#e2e8f0;border:1px solid var(--line);cursor:zoom-in}
+.gallery-card img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.gallery-card:hover img{transform:scale(1.04)}
+.team-card{position:relative;overflow:hidden;border:1px solid var(--line);background:#fff;border-radius:4px}
+.team-card:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--blue)}
+.team-card img{width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid #e8f1fb}
+.modern-card{border:1px solid var(--line);background:#fff;box-shadow:0 4px 15px #0b3a6810}
+.dark{background:#073b73;color:#fff}
+.shadowx{box-shadow:0 7px 25px #0b3a6814}
+.muted{color:#64748b}
+.admin-input{width:100%;padding:12px 14px;border:1px solid #ccd8e4;border-radius:4px;background:#fff;color:#172b3e;outline:none}
+.admin-input:focus{border-color:#0756a8;box-shadow:0 0 0 3px #0756a81a}
+.status{display:none;padding:11px;border-radius:4px;font-weight:700}.status.show{display:block}
+.fab{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;z-index:80}
+.modal{display:none;position:fixed;inset:0;background:#001a2acc;z-index:100;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}
+.modal-panel{animation:modalIn .22s ease both}@keyframes modalIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.image-modal img{max-height:78vh;max-width:92vw;object-fit:contain;border-radius:4px}
+.pdf-card{border:1px solid var(--line);background:#fff;border-radius:4px;padding:18px;box-shadow:0 4px 15px #0b3a6810}
+.pdf-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.pdf-actions a{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 13px;border-radius:4px;font-weight:800}.pdf-view{background:#0756a8;color:#fff}.pdf-download{background:#16834a;color:#fff}
+.footer{background:#062f5d;color:#fff}.footer h3{color:#fff}.footer-col h4{font-size:17px;font-weight:900;border-bottom:1px solid #ffffff30;padding-bottom:10px;margin-bottom:10px}.footer-col a{display:block;color:#d7e7f7;padding:5px 0;font-size:14px}
+.loader{position:fixed;inset:0;z-index:200;background:#062f5d;color:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column}.loader.hide{display:none}
+.mobile-menu{background:#0756a8;color:#fff}
+@media(max-width:768px){
+ .portal-top .hide-sm{display:none}
+ .logo-title{font-size:20px}.logo-mark{width:50px;height:50px;font-size:20px}
+ .hero{min-height:390px}.hero h1{font-size:2.2rem}.hero h2{font-size:1.25rem}
+ .section-title{font-size:27px}.gallery-card{height:210px}
+}
+</style>
+
+</head>
+<body>
+<div id="loader" class="loader"><div class="w-16 h-16 border-4 border-white/20 border-t-yellow-400 rounded-full animate-spin"></div><h2 class="text-2xl font-extrabold mt-5">रोह पंचायत</h2><p class="text-slate-300 mt-1">Website Loading...</p></div>
+
+
+<div class="portal-top">
+  <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-between gap-2">
+    <div class="flex gap-4"><span>📞 हेल्पलाइन: +91 7488417922</span><span class="hide-sm">✉ जनहित सूचना पोर्टल</span></div>
+    <div class="flex gap-4"><a href="#home">मुख्य पृष्ठ</a><a href="#footer">संपर्क</a><span>A- A A+</span></div>
+  </div>
+</div>
+<header class="portal-header">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+    <button onclick="showPage('home')" class="portal-logo text-left">
+      <div class="logo-mark">रो</div>
+      <div><div class="logo-title">रोह पंचायत</div><div class="logo-sub">जन सूचना एवं डिजिटल सेवा पोर्टल</div></div>
+    </button>
+    <div class="hidden md:block text-right">
+      <div class="font-black text-[#073b73] text-lg">विपेन्द्र प्रसाद सिन्हा</div>
+      <div class="text-sm text-slate-500">उर्फ (दिपु मेहता) • रोह पंचायत 2026</div>
+    </div>
+    <button onclick="toggleMenu()" class="md:hidden w-11 h-11 rounded bg-blue-700 text-white text-xl"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+<nav class="portal-nav hidden md:block">
+  <div class="max-w-7xl mx-auto px-4 flex flex-wrap">
+    <button class="navlink nav-active" onclick="showPage('home')">होम</button>
+    <button class="navlink" onclick="showPage('about')">परिचय</button>
+    <button class="navlink" onclick="showPage('suggestions')">सुझाव</button>
+    <button class="navlink" onclick="showPage('videoGallery')">Video Gallery</button>
+    <button class="navlink" onclick="showPage('services')">सेवाएं</button>
+    <button class="navlink" onclick="showPage('gallery')">Gallery</button>
+    <button class="navlink" onclick="showPage('manifesto')">संकल्प</button>
+    <button class="navlink" onclick="showPage('pdfs')">दस्तावेज़ / PDF</button>
+    <button class="navlink" onclick="showPage('downloads')">APP</button>
+    <a class="navlink" href="https://mukhiyapanchayatroh.github.io/AADI-TECH-HUB-ROH/" target="_blank" rel="noopener">शिकायत</a>
+    <a class="navlink" href="https://mukhiyapanchayatroh.github.io/pdf.html/" target="_blank" rel="noopener">महत्वपूर्ण जानकारी</a>
+    <button id="loggedOutNav" class="navlink ml-auto" onclick="showPage('userLogin')">👤 Login</button>
+    <div id="loggedInNav" class="hidden ml-auto items-center gap-2">
+      <span id="headerUserName" class="font-bold px-2">User</span>
+      <button class="navlink bg-red-600" onclick="logoutUser()">Logout</button>
+    </div>
+    <button class="navlink bg-slate-800" onclick="showPage('login')">🔐 Admin</button>
+  </div>
+</nav>
+<div id="mobileMenu" class="mobile-menu hidden md:hidden px-4 pb-3">
+  <button onclick="showPage('home');toggleMenu()" class="block w-full text-left py-3 border-b border-white/10">🏠 होम</button>
+  <button onclick="showPage('about');toggleMenu()" class="block w-full text-left py-3 border-b border-white/10">👤 परिचय</button>
+  <button onclick="showPage('suggestions');toggleMenu()" class="block w-full text-left py-3 border-b border-white/10">💬 सुझाव</button>
+  <button onclick="showPage('videoGallery');toggleMenu()" class="block w-full text-left py-3 border-b border-white/10">🎥 Video Gallery</button>
+  <button onclick="showPage('services');toggleMenu()" class="block w-full text-left py-3 border-b border-white/10">⚙️ सेवाएं</button>
+  <button onclick="showPage('gallery');toggleMenu()" class="block w-full text-left py-3 border-b border-white/10">🖼️ Gallery</button>
+  <button onclick="showPage('manifesto');toggleMenu()" class="block w-full text-left py-3 border-b border-white/10">📜 संकल्प</button>
+  <button onclick="showPage('pdfs');toggleMenu()" class="block w-full text-left py-3 border-b border-white/10">📄 दस्तावेज़ / PDF</button>
+  <button onclick="showPage('downloads');toggleMenu()" class="block w-full text-left py-3 border-b border-white/10">📱 APP</button>
+  <a href="https://mukhiyapanchayatroh.github.io/AADI-TECH-HUB-ROH/" target="_blank" class="block py-3 border-b border-white/10">📝 शिकायत</a>
+  <a href="https://mukhiyapanchayatroh.github.io/pdf.html/" target="_blank" class="block py-3">ℹ️ महत्वपूर्ण जानकारी</a>
+</div>
+
+<div class="notice-bar"><div class="max-w-7xl mx-auto flex items-center"><div class="notice-label">📢 नवीनतम सूचना</div><div class="notice-text px-4 py-2 overflow-hidden whitespace-nowrap"><span id="mainNotice">रोह पंचायत पोर्टल पर आपका स्वागत है।</span></div></div></div></div>
+
+<section id="home" class="page active">
+  
+<section class="hero relative overflow-hidden text-white">
+  <video id="heroVideo" class="absolute inset-0 w-full h-full object-cover opacity-15" autoplay muted loop playsinline><source src="video.mp4" type="video/mp4"></video>
+  <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-20 w-full">
+    <div class="grid md:grid-cols-[1fr_360px] gap-10 items-center">
+      <div>
+        <div class="inline-block bg-white/15 border border-white/25 px-4 py-2 rounded text-sm font-bold">रोह पंचायत • 2026</div>
+        <h1 class="mt-5 text-4xl md:text-6xl font-black">विपेन्द्र प्रसाद सिन्हा</h1>
+        <h2 class="mt-2 text-2xl md:text-3xl font-extrabold gold">उर्फ (दिपु मेहता)</h2>
+        <p class="mt-5 text-lg text-blue-50 max-w-2xl">ईमानदारी • कर्मठता • शिक्षा • विकास — जनहित, सूचना और डिजिटल सेवाओं के लिए समर्पित पोर्टल।</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="https://wa.me/917488417922" target="_blank" class="px-5 py-3 rounded bg-green-600 font-extrabold">💬 WhatsApp संपर्क</a>
+          <button onclick="showPage('pdfs')" class="px-5 py-3 rounded bg-white text-[#073b73] font-extrabold">📄 दस्तावेज़ देखें</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <main class="max-w-7xl mx-auto px-4">
+    <section class="portal-section">
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="portal-card quick-card"><div class="card-body flex gap-4"><div class="quick-icon">📢</div><div><div class="font-black text-lg text-[#073b73]">Latest Updates</div><p id="mainEvent" class="muted font-semibold mt-1">जल्द अपडेट होगा।</p></div></div></div>
+        <div class="portal-card quick-card"><div class="card-body flex gap-4"><div class="quick-icon">📄</div><div><div class="font-black text-lg text-[#073b73]">Documents / PDF</div><p class="muted font-semibold mt-1">महत्वपूर्ण दस्तावेज़ ऑनलाइन देखें।</p><button onclick="showPage('pdfs')" class="text-blue-700 font-black mt-2">View Documents →</button></div></div></div>
+        <div class="portal-card quick-card"><div class="card-body flex gap-4"><div class="quick-icon">☎</div><div><div class="font-black text-lg text-[#073b73]">Contact Us</div><p class="muted font-semibold mt-1">+91 7488417922</p><a href="tel:+917488417922" class="text-blue-700 font-black mt-2 inline-block">Call Now →</a></div></div></div>
+      </div>
+    </section>
+
+    <section class="grid lg:grid-cols-3 gap-6 portal-section">
+      <div class="lg:col-span-2 portal-card">
+        <div class="card-head">📜 मुख्य सूचना</div>
+        <div class="card-body">
+          <div class="bg-[#f7fbff] border-l-4 border-blue-700 p-5 rounded-r">
+            <div class="text-2xl">❝</div>
+            <p id="mainShayari" class="text-xl md:text-2xl font-black text-[#17324d]">लोड हो रहा है...</p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <button onclick="showPage('about')" class="text-left border p-4 rounded hover:bg-blue-50"><b class="text-blue-800">परिचय</b><div class="muted text-sm mt-1">पंचायत और अभियान के बारे में जानकारी</div></button>
+            <button onclick="showPage('services')" class="text-left border p-4 rounded hover:bg-blue-50"><b class="text-blue-800">सेवाएं</b><div class="muted text-sm mt-1">जन समस्या, शिक्षा और स्वास्थ्य सहायता</div></button>
+          </div>
+        </div>
+      </div>
+      <div class="portal-card">
+        <div class="card-head">🔗 Quick Links</div>
+        <div class="card-body">
+          <button onclick="showPage('pdfs')" class="list-link w-full text-left">PDF दस्तावेज़</button>
+          <button onclick="showPage('downloads')" class="list-link w-full text-left">Panchayat APP</button>
+          <a href="https://mukhiyapanchayatroh.github.io/AADI-TECH-HUB-ROH/" target="_blank" class="list-link">शिकायत / सुझाव</a>
+          <a href="https://mukhiyapanchayatroh.github.io/pdf.html/" target="_blank" class="list-link">महत्वपूर्ण जानकारी</a>
+          <button onclick="showPage('userLogin')" class="list-link w-full text-left">Citizen Login</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="portal-section">
+      <div class="section-kicker">Information Centre</div>
+      <h2 class="section-title mt-1">रोह पंचायत सूचना केंद्र</h2>
+      <div class="grid md:grid-cols-3 gap-5 mt-5">
+        <div class="portal-card"><div class="card-head">📅 आगामी कार्यक्रम</div><div class="card-body"><p id="mainEvent2" class="font-bold muted">जल्द अपडेट होगा।</p></div></div>
+        <div class="portal-card"><div class="card-head">⚙️ नागरिक सेवाएं</div><div class="card-body"><p id="servicesText2" class="font-bold muted">जन समस्या समाधान</p></div></div>
+        <div class="portal-card"><div class="card-head">👥 जन समर्थन</div><div class="card-body"><p class="font-bold muted">रोह पंचायत के लिए अपना समर्थन दर्ज करें।</p><button onclick="vote()" class="mt-3 px-5 py-2 bg-[#0756a8] text-white rounded font-black">👍 Support</button><div id="voteCount" class="text-sm text-blue-700 font-bold mt-2">Total Support: 0</div></div></div>
+      </div>
+    </section>
+
+    <section class="portal-section">
+      <div class="text-center mb-7"><div class="section-kicker">Team</div><h2 class="section-title">हमारी टीम</h2><p class="muted mt-1 font-semibold">सेवा, सहयोग और विकास के साथ</p></div>
+      <div id="teamContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+    
+
+    
+  </main>
+</section>
+
+<section id="suggestions" class="page max-w-6xl mx-auto px-4 py-16"><div class="dark rounded-[2rem] p-6 md:p-10 text-white shadowx"><div class="grid lg:grid-cols-2 gap-10 items-start"><div><div class="text-yellow-300 font-extrabold">आपकी राय जरूरी है</div><h2 class="text-4xl font-black mt-2">फीडबैक / सुझाव</h2><p class="text-slate-300 text-lg mt-4">गांव और पंचायत से जुड़ी समस्या, सुझाव या समर्थन संदेश भेजें।</p><div class="mt-8 space-y-3 text-slate-200"><div>✓ जानकारी Firebase में सुरक्षित रूप से सेव होगी</div><div>✓ टीम आपके संदेश को देख सकती है</div><div>✓ शिकायत या सुझाव सीधे भेजें</div></div></div><div class="bg-white rounded-3xl p-6 text-slate-900"><input id="fbName" class="admin-input mb-3" placeholder="आपका नाम (Optional)"><input id="fbMobile" class="admin-input mb-3" placeholder="मोबाइल नंबर (Optional)" type="tel"><select id="fbType" class="admin-input mb-3"><option>सुझाव</option><option>समस्या</option><option>समर्थन</option><option>अन्य</option></select><textarea id="fbMessage" class="admin-input mb-3 h-32" placeholder="अपना संदेश लिखें..."></textarea><button id="sendFeedbackBtn" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold">फीडबैक भेजें</button><div id="fbStatus" class="status mt-3"></div></div></div></div></section>
+
+<section id="videoGallery" class="page max-w-6xl mx-auto px-4 py-16">
+  <div class="text-center mb-10">
+    <div class="section-kicker">Video Gallery</div>
+    <h2 class="section-title">पंचायत वीडियो</h2>
+    <p class="muted mt-1 font-semibold">पंचायत की गतिविधियों और महत्वपूर्ण वीडियो</p>
+  </div>
+  <div class="bg-[#062f5d] p-2 rounded shadowx">
+    <video id="mainVideo" controls playsinline class="w-full max-h-[650px] rounded bg-black">
+      <source id="videoSource" src="" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section id="gallery" class="page max-w-6xl mx-auto px-4 py-16">
+  <div class="text-center mb-10">
+    <div class="section-kicker">Gallery</div>
+    <h2 class="section-title">फोटो गैलरी</h2>
+    <p class="muted mt-1 font-semibold">पंचायत की गतिविधियों और यादों की तस्वीरें</p>
+  </div>
+  <div id="photoGallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+</section>
+
+<section id="about" class="page max-w-5xl mx-auto px-4 py-16"><div class="bg-white rounded-3xl p-8 md:p-12 shadowx"><div class="text-blue-600 font-extrabold">ABOUT</div><h2 class="text-5xl font-black mt-2">परिचय</h2><p id="aboutText" class="text-xl font-semibold text-slate-600 leading-relaxed mt-6">यह पंचायत सेवा और विकास के लिए समर्पित है।</p></div></section>
+<section id="services" class="page max-w-6xl mx-auto px-4 py-16"><div class="text-center mb-10"><div class="text-blue-600 font-extrabold">SERVICES</div><h2 class="text-5xl font-black">हमारी सेवाएं</h2></div><div class="grid md:grid-cols-3 gap-6"><div class="bg-white rounded-3xl p-8 shadowx card"><i class="fa-solid fa-hand-holding-heart text-4xl text-blue-600"></i><h3 class="text-2xl font-black mt-5">जन समस्या समाधान</h3><p id="servicesText" class="muted font-semibold mt-2">जन समस्या समाधान</p></div><div class="bg-white rounded-3xl p-8 shadowx card"><i class="fa-solid fa-school text-4xl text-blue-600"></i><h3 class="text-2xl font-black mt-5">शिक्षा सहायता</h3><p id="service2" class="muted font-semibold mt-2">शिक्षा सहायता</p></div><div class="bg-white rounded-3xl p-8 shadowx card"><i class="fa-solid fa-hospital text-4xl text-blue-600"></i><h3 class="text-2xl font-black mt-5">स्वास्थ्य सहायता</h3><p id="service3" class="muted font-semibold mt-2">स्वास्थ्य सहायता</p></div></div></section>
+<section id="manifesto" class="page max-w-5xl mx-auto px-4 py-16"><div class="dark rounded-3xl overflow-hidden shadowx text-white"><div class="p-8 md:p-12 text-center"><div class="text-yellow-300 font-extrabold">VISION</div><h2 class="text-5xl font-black mt-2">हमारा संकल्प</h2><p class="text-slate-300 mt-3">सशक्त रोह • समृद्ध रोह</p></div><div class="bg-white text-slate-800 p-7 md:p-10 space-y-5"><div class="flex gap-5 items-start"><b class="text-4xl text-blue-600">01</b><p class="text-xl font-bold">पंचायत के सर्वांगीण विकास के लिए पारदर्शिता के साथ काम करना।</p></div><div class="border-t pt-5 flex gap-5 items-start"><b class="text-4xl text-blue-600">02</b><p class="text-xl font-bold">शिक्षा, स्वास्थ्य और कृषि सुविधाओं को आधुनिक बनाना।</p></div></div></div></section>
+<section id="downloads" class="page max-w-4xl mx-auto px-4 py-16"><div class="dark text-white rounded-3xl p-10 text-center shadowx"><i class="fa-solid fa-mobile-screen-button text-6xl text-yellow-300"></i><h2 class="text-5xl font-black mt-5">Panchayat APP</h2><p class="text-slate-300 text-lg mt-3">मोबाइल पर पंचायत की जानकारी आसानी से देखें।</p><a href="https://drive.google.com/uc?export=download&id=1H4Zr06mCJPfX-Wjky6xAJHyJ10AY_sKu" class="inline-block mt-7 px-8 py-4 rounded-2xl bg-yellow-400 text-slate-900 font-black">📥 App Download करें</a></div></section>
+
+<section id="pdfs" class="page max-w-6xl mx-auto px-4 py-16">
+  <div class="text-center mb-10">
+    <div class="text-blue-600 font-extrabold">DOCUMENTS</div>
+    <h2 class="text-5xl font-black">PDF दस्तावेज़</h2>
+    <p class="muted mt-2 font-semibold">नाम के साथ PDF देखें और डाउनलोड करें</p>
+  </div>
+  <div id="pdfList" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+</section>
+
+
+<section id="userLogin" class="page max-w-6xl mx-auto px-4 py-16">
+  <div class="max-w-md mx-auto bg-white rounded-3xl p-7 md:p-9 shadowx">
+    <div class="text-center">
+      <i class="fa-solid fa-user-lock text-5xl text-blue-600"></i>
+      <h2 class="text-4xl font-black mt-4">यूज़र लॉगिन</h2>
+      <p class="muted mt-2">सभी नागरिकों के लिए सुरक्षित लॉगिन</p>
+    </div>
+    <div class="mt-7">
+      <input id="userEmail" class="admin-input mb-3" placeholder="Email" type="email" autocomplete="email">
+      <input id="userPassword" class="admin-input mb-3" placeholder="Password" type="password" autocomplete="current-password">
+      <button onclick="handleUserLogin()" class="w-full py-3 rounded-xl bg-blue-600 text-white font-black">लॉगिन करें</button>
+      <button onclick="showRegister()" class="w-full mt-3 py-3 rounded-xl bg-slate-100 text-slate-800 font-black">नया अकाउंट बनाएं</button>
+      <button onclick="resetUserPassword()" class="w-full mt-3 text-blue-600 font-bold">Password भूल गए?</button>
+      <div id="userLoginStatus" class="status mt-3"></div>
+    </div>
+  </div>
+</section>
+
+<section id="register" class="page max-w-6xl mx-auto px-4 py-16">
+  <div class="max-w-md mx-auto bg-white rounded-3xl p-7 md:p-9 shadowx">
+    <div class="text-center">
+      <i class="fa-solid fa-user-plus text-5xl text-blue-600"></i>
+      <h2 class="text-4xl font-black mt-4">नया अकाउंट</h2>
+      <p class="muted mt-2">अपना नागरिक अकाउंट बनाएं</p>
+    </div>
+    <div class="mt-7">
+      <input id="regName" class="admin-input mb-3" placeholder="आपका नाम" autocomplete="name">
+      <input id="regMobile" class="admin-input mb-3" placeholder="मोबाइल नंबर" type="tel" autocomplete="tel">
+      <input id="regEmail" class="admin-input mb-3" placeholder="Email" type="email" autocomplete="email">
+      <input id="regPassword" class="admin-input mb-3" placeholder="Password (कम से कम 6 अक्षर)" type="password" autocomplete="new-password">
+      <button onclick="handleRegister()" class="w-full py-3 rounded-xl bg-green-600 text-white font-black">अकाउंट बनाएं</button>
+      <button onclick="showPage('userLogin')" class="w-full mt-3 py-3 rounded-xl bg-slate-100 text-slate-800 font-black">लॉगिन पर जाएं</button>
+      <div id="registerStatus" class="status mt-3"></div>
+    </div>
+  </div>
+</section>
+
+<section id="login" class="page max-w-6xl mx-auto px-4 py-16"><div id="loginForm" class="max-w-md mx-auto bg-white rounded-3xl p-7 md:p-9 shadowx"><div class="text-center"><i class="fa-solid fa-shield-halved text-5xl text-blue-600"></i><h2 class="text-4xl font-black mt-4">Admin Login</h2><p class="muted mt-2">सिर्फ अधिकृत एडमिन के लिए</p></div><div class="mt-7"><input id="userInput" class="admin-input mb-3" placeholder="Admin Email" type="email"><input id="passInput" class="admin-input mb-3" placeholder="Password" type="password"><button onclick="handleLogin()" class="w-full py-3 rounded-xl bg-blue-600 text-white font-black">लॉगिन करें</button><div id="loginStatus" class="status mt-3"></div></div></div>
+<div id="adminDashboard" class="hidden bg-white rounded-3xl p-6 md:p-9 shadowx">
+<div class="flex flex-wrap justify-between items-center gap-4 border-b pb-6">
+  <div><div class="text-blue-600 font-extrabold">CONTROL PANEL</div><h2 class="text-4xl font-black">मास्टर कंट्रोल</h2></div>
+  <button onclick="logoutAdmin()" class="px-5 py-2 rounded-xl bg-red-500 text-white font-bold">Logout</button>
+</div>
+<div class="grid lg:grid-cols-2 gap-8 mt-8">
+  <div class="space-y-4">
+    <h3 class="text-2xl font-black">मुख्य जानकारी</h3>
+    <textarea id="editShayari" class="admin-input h-32" placeholder="मुख्य शायरी"></textarea>
+    <input id="editEvent" class="admin-input" placeholder="आगामी कार्यक्रम">
+    <input id="editPhotoUrl" class="admin-input" placeholder="Profile Photo URL">
+    <input id="fbLink" class="admin-input" placeholder="Facebook URL">
+    <input id="igLink" class="admin-input" placeholder="Instagram URL">
+    <input id="ytLink" class="admin-input" placeholder="YouTube URL">
+    <input id="editNotice" class="admin-input" placeholder="Notice">
+    <input id="editPopup" class="admin-input" placeholder="Popup Message">
+    <textarea id="editAbout" class="admin-input h-24" placeholder="About"></textarea>
+    <textarea id="editServices" class="admin-input h-24" placeholder="Services"></textarea>
+    <input id="videoLink" class="admin-input" placeholder="Main Video MP4 URL">
+  </div>
+  <div>
+    <h3 class="text-2xl font-black mb-4">Gallery + Team</h3>
+    <div class="mt-8 border rounded-2xl p-4">
+      <h4 class="text-xl font-black mb-3">PDF Documents</h4>
+      <p class="muted text-sm mb-3">हर PDF के लिए नाम और PDF URL डालें। खाली वाले दिखाई नहीं देंगे।</p>
+      <div class="grid gap-3">
+        <input id="pdfName1" class="admin-input" placeholder="PDF 1 का नाम" value="2025-EROLLGEN-S04-238-SIR-FinalRoll-Revision1-HIN-43-WI.pdf">
+        <input id="pdfUrl1" class="admin-input" placeholder="PDF 1 URL" value="https://mgleamnzydsnciozrfye.supabase.co/storage/v1/object/sign/gfgfg/2025-EROLLGEN-S04-238-SIR-FinalRoll-Revision1-HIN-43-WI.pdf?token=eyJraWQiOiIyZmY2NDAyNC0xZGMxLTQ2ZmYtYThlNy03NDg3MjQ4NTZlZmUiLCJhbGciOiJIUzUxMiJ9.eyJ1cmwiOiJnZmdmZy8yMDI1LUVST0xMR0VOLVMwNC0yMzgtU0lSLUZpbmFsUm9sbC1SZXZpc2lvbjEtSElOLTQzLVdJLnBkZiIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODk0NTI4OTIsImV4cCI6MTgyMDk4ODg5Mn0.7LmFafKK1grWoudoAyOf6Sajh8XE6Ce-elOrRTCEJRnHGvj_P3UVF_rO23rLNVC2awHFQizTHyU742a9lHM_qg">
+        <input id="pdfName2" class="admin-input" placeholder="PDF 2 का नाम">
+        <input id="pdfUrl2" class="admin-input" placeholder="PDF 2 URL">
+        <input id="pdfName3" class="admin-input" placeholder="PDF 3 का नाम">
+        <input id="pdfUrl3" class="admin-input" placeholder="PDF 3 URL">
+        <input id="pdfName4" class="admin-input" placeholder="PDF 4 का नाम">
+        <input id="pdfUrl4" class="admin-input" placeholder="PDF 4 URL">
+        <input id="pdfName5" class="admin-input" placeholder="PDF 5 का नाम">
+        <input id="pdfUrl5" class="admin-input" placeholder="PDF 5 URL">
+        <input id="pdfName6" class="admin-input" placeholder="PDF 6 का नाम">
+        <input id="pdfUrl6" class="admin-input" placeholder="PDF 6 URL">
+        <input id="pdfName7" class="admin-input" placeholder="PDF 7 का नाम">
+        <input id="pdfUrl7" class="admin-input" placeholder="PDF 7 URL">
+        <input id="pdfName8" class="admin-input" placeholder="PDF 8 का नाम">
+        <input id="pdfUrl8" class="admin-input" placeholder="PDF 8 URL">
+        <input id="pdfName9" class="admin-input" placeholder="PDF 9 का नाम">
+        <input id="pdfUrl9" class="admin-input" placeholder="PDF 9 URL">
+        <input id="pdfName10" class="admin-input" placeholder="PDF 20 का नाम">
+        <input id="pdfUrl10" class="admin-input" placeholder="PDF 20 URL">
+        <input id="pdfName11" class="admin-input" placeholder="PDF 11 का नाम">
+        <input id="pdfUrl11" class="admin-input" placeholder="PDF 11 URL">
+        <input id="pdfName12" class="admin-input" placeholder="PDF 12 का नाम">
+        <input id="pdfUrl12" class="admin-input" placeholder="PDF 12 URL">
+        <input id="pdfName13" class="admin-input" placeholder="PDF 13 का नाम">
+        <input id="pdfUrl13" class="admin-input" placeholder="PDF 13 URL">
+        <input id="pdfName14" class="admin-input" placeholder="PDF 14 का नाम">
+        <input id="pdfUrl14" class="admin-input" placeholder="PDF 14 URL">
+        <input id="pdfName15" class="admin-input" placeholder="PDF 15 का नाम">
+        <input id="pdfUrl15" class="admin-input" placeholder="PDF 15 URL">
+        <input id="pdfName16" class="admin-input" placeholder="PDF 16 का नाम">
+        <input id="pdfUrl16" class="admin-input" placeholder="PDF 16 URL">
+        <input id="pdfName17" class="admin-input" placeholder="PDF 17 का नाम">
+        <input id="pdfUrl17" class="admin-input" placeholder="PDF 17 URL">
+        <input id="pdfName18" class="admin-input" placeholder="PDF 18 का नाम">
+        <input id="pdfUrl18" class="admin-input" placeholder="PDF 18 URL">
+        <input id="pdfName19" class="admin-input" placeholder="PDF 19 का नाम">
+        <input id="pdfUrl19" class="admin-input" placeholder="PDF 19 URL">
+        <input id="pdfName20" class="admin-input" placeholder="PDF 20 का नाम">
+        <input id="pdfUrl20" class="admin-input" placeholder="PDF 20 URL">
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3">
+      <input id="g1" class="admin-input" placeholder="Photo 1">
+      <input id="g2" class="admin-input" placeholder="Photo 2">
+      <input id="g3" class="admin-input" placeholder="Photo 3">
+      <input id="g4" class="admin-input" placeholder="Photo 4">
+      <input id="g5" class="admin-input" placeholder="Photo 5">
+      <input id="g6" class="admin-input" placeholder="Photo 6">
+      <input id="g7" class="admin-input" placeholder="Photo 7">
+      <input id="g8" class="admin-input" placeholder="Photo 8">
+      <input id="g9" class="admin-input" placeholder="Photo 9">
+      <input id="g10" class="admin-input" placeholder="Photo 10">
+      <input id="g11" class="admin-input" placeholder="Photo 11">
+      <input id="g12" class="admin-input" placeholder="Photo 12">
+      <input id="g13" class="admin-input" placeholder="Photo 13">
+      <input id="g14" class="admin-input" placeholder="Photo 14">
+      <input id="g15" class="admin-input" placeholder="Photo 15">
+      <input id="g16" class="admin-input" placeholder="Photo 16">
+      <input id="g17" class="admin-input" placeholder="Photo 17">
+      <input id="g18" class="admin-input" placeholder="Photo 18">
+      <input id="g19" class="admin-input" placeholder="Photo 19">
+      <input id="g20" class="admin-input" placeholder="Photo 20">
+    </div>
+    <div class="mt-8 space-y-3">
+      <div class="border rounded-2xl p-4">
+        <b>Team Member 1</b>
+        <input id="teamName1" class="admin-input mt-2" placeholder="Name">
+        <input id="teamPhoto1" class="admin-input mt-2" placeholder="Photo URL">
+        <input id="teamRole1" class="admin-input mt-2" placeholder="Role">
+        <input id="teamFB1" class="admin-input mt-2" placeholder="Facebook">
+        <input id="teamWA1" class="admin-input mt-2" placeholder="WhatsApp">
+        <input id="teamIG1" class="admin-input mt-2" placeholder="Instagram">
+      </div>
+      <div class="border rounded-2xl p-4">
+        <b>Team Member 2</b>
+        <input id="teamName2" class="admin-input mt-2" placeholder="Name">
+        <input id="teamPhoto2" class="admin-input mt-2" placeholder="Photo URL">
+        <input id="teamRole2" class="admin-input mt-2" placeholder="Role">
+        <input id="teamFB2" class="admin-input mt-2" placeholder="Facebook">
+        <input id="teamWA2" class="admin-input mt-2" placeholder="WhatsApp">
+        <input id="teamIG2" class="admin-input mt-2" placeholder="Instagram">
+      </div>
+      <div class="border rounded-2xl p-4">
+        <b>Team Member 3</b>
+        <input id="teamName3" class="admin-input mt-2" placeholder="Name">
+        <input id="teamPhoto3" class="admin-input mt-2" placeholder="Photo URL">
+        <input id="teamRole3" class="admin-input mt-2" placeholder="Role">
+        <input id="teamFB3" class="admin-input mt-2" placeholder="Facebook">
+        <input id="teamWA3" class="admin-input mt-2" placeholder="WhatsApp">
+        <input id="teamIG3" class="admin-input mt-2" placeholder="Instagram">
+      </div>
+    </div>
+  </div>
+</div>
+<button id="saveBtn" class="w-full mt-9 py-4 rounded-2xl bg-blue-600 text-white font-black text-lg">💾 Save & Update</button>
+<div id="saveStatus" class="status mt-3"></div>
+<div class="mt-10">
+  <h3 class="text-2xl font-black mb-5">जनता का Feedback</h3>
+  <div id="feedbackList" class="space-y-4"><div class="muted">Login के बाद feedback लोड होगा...</div></div>
+</div>
+</div></section>
+
+
+
+
+<footer id="footer" class="footer mt-10">
+  <div class="max-w-7xl mx-auto px-4 py-10">
+    <div class="grid md:grid-cols-4 gap-8">
+      <div><h3 class="text-2xl font-black">रोह पंचायत</h3><p class="text-blue-100 mt-3 text-sm leading-6">जन सूचना, डिजिटल सेवाओं और पंचायत से जुड़ी महत्वपूर्ण जानकारी के लिए समर्पित पोर्टल।</p></div>
+      <div class="footer-col"><h4>महत्वपूर्ण लिंक</h4><a href="#" onclick="showPage('about')">परिचय</a><a href="#" onclick="showPage('services')">सेवाएं</a><a href="#" onclick="showPage('manifesto')">संकल्प</a><a href="#" onclick="showPage('pdfs')">दस्तावेज़ / PDF</a></div>
+      <div class="footer-col"><h4>नागरिक सेवाएं</h4><a href="#" onclick="showPage('userLogin')">Citizen Login</a><a href="https://mukhiyapanchayatroh.github.io/AADI-TECH-HUB-ROH/" target="_blank">शिकायत / सुझाव</a><a href="https://mukhiyapanchayatroh.github.io/pdf.html/" target="_blank">महत्वपूर्ण जानकारी</a><a href="#" onclick="showPage('downloads')">APP Download</a></div>
+      <div class="footer-col"><h4>संपर्क करें</h4><p class="text-blue-100 text-sm">विपेन्द्र प्रसाद सिन्हा (दिपु मेहता)</p><p class="text-blue-100 text-sm mt-2">📞 +91 7488417922</p><div class="flex gap-2 mt-4"><a id="footerFB" class="w-10 h-10 bg-white/10 rounded grid place-items-center"><i class="fa-brands fa-facebook"></i></a><a id="footerIG" class="w-10 h-10 bg-white/10 rounded grid place-items-center"><i class="fa-brands fa-instagram"></i></a><a id="footerYT" class="w-10 h-10 bg-white/10 rounded grid place-items-center"><i class="fa-brands fa-youtube"></i></a></div></div>
+    </div>
+    <div class="border-t border-white/15 mt-9 pt-5 flex flex-wrap justify-between gap-3 text-xs text-blue-100"><span>© 2026 Roh Panchayat. All Rights Reserved.</span><span>Developed by Aadi Cyber Cafe Roh</span></div>
+  </div>
+</footer>
+
+<div class="fixed left-3 bottom-3 z-40 bg-slate-900 text-white px-3 py-2 rounded-xl text-xs font-bold shadow"><i class="fa-solid fa-eye mr-1"></i> Visitors: <span id="visitorCount">0</span></div>
+<div id="imageModal" class="modal image-modal" onclick="closeImageModal(event)"><div class="modal-panel relative text-center"><button onclick="closeImageModal()" class="absolute -top-3 -right-3 w-11 h-11 rounded-full bg-white text-slate-900 text-xl font-black shadow-xl">✕</button><img id="modalImage" src="" alt="Gallery Preview" class="shadow-2xl"><div id="modalCaption" class="text-white font-bold mt-4"></div></div></div>
+<button onclick="toggleAI()" class="fab bg-blue-600 hover:bg-blue-500 text-white shadow-2xl text-xl">💬</button>
+<div id="aiBox" class="modal"><div class="chatbox bg-white rounded-3xl overflow-hidden shadow-2xl"><div class="dark text-white p-4 flex justify-between font-black">🤖 पंचायत AI सहायक <button onclick="toggleAI()">✕</button></div><div id="aiChat" class="p-4 h-80 overflow-auto"><div class="chatmsg bg-green-50 text-green-800">नमस्ते 🙏 कार्यक्रम, संपर्क, शायरी, फोटो, शिकायत या सेवाओं के बारे में पूछें।</div></div><div class="border-t p-3 flex gap-2"><input id="aiInput" class="admin-input" placeholder="सवाल लिखें..."><button onclick="askAI()" class="px-4 rounded-xl bg-blue-600 text-white font-bold">Send</button></div></div></div>
+<div id="popup" class="modal"><div class="bg-white rounded-3xl p-7 max-w-sm text-center"><div class="text-4xl">📢</div><h3 class="text-2xl font-black mt-3">सूचना</h3><p id="popupText" class="text-slate-600 font-bold mt-3">नई सूचना जल्द आएगी।</p><button onclick="document.getElementById('popup').classList.remove('show')" class="mt-5 px-6 py-2 rounded-xl bg-blue-600 text-white font-bold">ठीक है</button></div></div>
+
+<script type="module">
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+import {getDatabase,ref,set,get,onValue,push,remove,update,runTransaction} from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
+import {getAuth,signInWithEmailAndPassword,createUserWithEmailAndPassword,sendPasswordResetEmail,onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+const firebaseConfig={apiKey:'AIzaSyC7RoapoxY0nDoSsfa5mUGzEbaKFLmDQ4Y',authDomain:'rohpanchayat.firebaseapp.com',databaseURL:'https://rohpanchayat-default-rtdb.firebaseio.com',projectId:'rohpanchayat',storageBucket:'rohpanchayat.firebasestorage.app',messagingSenderId:'122020322885',appId:'1:122020322885:web:a0f88c60f6bec087d64d2c'};
+const app=initializeApp(firebaseConfig),db=getDatabase(app),auth=getAuth(app);
+const defaultPDFName='2025-EROLLGEN-S04-238-SIR-FinalRoll-Revision1-HIN-43-WI.pdf';
+const defaultPDFUrl='https://mgleamnzydsnciozrfye.supabase.co/storage/v1/object/sign/gfgfg/2025-EROLLGEN-S04-238-SIR-FinalRoll-Revision1-HIN-43-WI.pdf?token=eyJraWQiOiIyZmY2NDAyNC0xZGMxLTQ2ZmYtYThlNy03NDg3MjQ4NTZlZmUiLCJhbGciOiJIUzUxMiJ9.eyJ1cmwiOiJnZmdmZy8yMDI1LUVST0xMR0VOLVMwNC0yMzgtU0lSLUZpbmFsUm9sbC1SZXZpc2lvbjEtSElOLTQzLVdJLnBkZiIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODk0NTI4OTIsImV4cCI6MTgyMDk4ODg5Mn0.7LmFafKK1grWoudoAyOf6Sajh8XE6Ce-elOrRTCEJRnHGvj_P3UVF_rO23rLNVC2awHFQizTHyU742a9lHM_qg';
+ const contentRef=ref(db,'content/'),feedbackRef=ref(db,'feedback/');
+const $=id=>document.getElementById(id); const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+function renderGallery(data){$('photoGallery').innerHTML='';for(let i=1;i<=20;i++){if(data['g'+i])$('photoGallery').insertAdjacentHTML('beforeend',`<div class="gallery-card shadowx" onclick="openImageModal('${safe(data['g'+i])}','पंचायत फोटो ')"><img src="${safe(data['g'+i])}" alt="पंचायत फोटो " loading="lazy" onerror="this.parentElement.style.display='none'"></div>`);}}
+
+function renderPDFs(data){
+  const list=$('pdfList');
+  if(!list) return;
+  list.innerHTML='';
+  let count=0;
+  for(let i=1;i<=20;i++){
+    const name=String(data['pdfName'+i]||'').trim();
+    const url=String(data['pdfUrl'+i]||'').trim();
+    if(!name || !url) continue;
+    count++;
+    list.insertAdjacentHTML('beforeend',`
+      <div class="pdf-card">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fa-solid fa-file-pdf"></i>
+          </div>
+          <div class="min-w-0">
+            <h3 class="text-xl font-black break-words">${safe(name)}</h3>
+            <p class="muted text-sm mt-1">PDF दस्तावेज़</p>
+          </div>
+        </div>
+        <div class="pdf-actions">
+          <a class="pdf-view" href="${safe(url)}" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> PDF देखें
+          </a>
+          <a class="pdf-download" href="${safe(url)}" target="_blank" rel="noopener" download>
+            <i class="fa-solid fa-download"></i> Download PDF
+          </a>
+        </div>
+      </div>`);
+  }
+  if(!count) list.innerHTML='<div class="col-span-full text-center bg-white rounded-3xl p-10 shadowx"><div class="text-5xl">📄</div><h3 class="text-2xl font-black mt-3">अभी कोई PDF उपलब्ध नहीं है</h3><p class="muted mt-2">Admin Panel से PDF का नाम और URL जोड़ें।</p></div>';
+}
+
+function renderTeam(data){$('teamContainer').innerHTML='';[1,2,3].forEach(i=>{let m=data['team'+i];if(m&&m.name)$('teamContainer').insertAdjacentHTML('beforeend',`<div class="team-card bg-white rounded-3xl p-7 text-center shadowx card"><img src="${safe(m.photo)}" alt="${safe(m.name)}" onerror="this.style.display='none'"><div class="text-blue-600 font-bold mt-4">${safe(m.role||'Member')}</div><h3 class="text-2xl font-black mt-1">${safe(m.name)}</h3><div class="flex justify-center gap-3 mt-4"><a href="${safe(m.fb||'#')}" target="_blank" class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center"><i class="fa-brands fa-facebook"></i></a><a href="${safe(m.whatsapp||'#')}" target="_blank" class="w-10 h-10 rounded-xl bg-green-50 text-green-600 flex items-center justify-center"><i class="fa-brands fa-whatsapp"></i></a><a href="${safe(m.instagram||'#')}" target="_blank" class="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a></div></div>`);});}
+function fillAdmin(data){['Shayari','Event'].forEach(x=>{});$('editShayari').value=data.shayari||'';$('editEvent').value=data.event||'';$('editPhotoUrl').value=data.photoUrl||'';$('fbLink').value=data.fb||'';$('igLink').value=data.ig||'';$('ytLink').value=data.yt||'';$('editNotice').value=data.notice||'';$('editPopup').value=data.popup||'';$('editAbout').value=data.about||'';$('editServices').value=data.services||'';$('videoLink').value=data.video||'';for(let i=1;i<=20;i++){if($('pdfName'+i))$('pdfName'+i).value=data['pdfName'+i]||(i===1?defaultPDFName:'');if($('pdfUrl'+i))$('pdfUrl'+i).value=data['pdfUrl'+i]||(i===1?defaultPDFUrl:'');}for(let i=1;i<=20;i++)$('g'+i).value=data['g'+i]||'';[1,2,3].forEach(i=>{let m=data['team'+i]||{};['name','photo','role'].forEach(k=>{if($('team'+({name:'Name',photo:'Photo',role:'Role'}[k])+i)){} });$('teamName'+i).value=m.name||'';$('teamPhoto'+i).value=m.photo||'';$('teamRole'+i).value=m.role||'';$('teamFB'+i).value=m.fb||'';$('teamWA'+i).value=m.whatsapp||'';$('teamIG'+i).value=m.instagram||'';});}
+onValue(contentRef,s=>{let d=s.val()||{};$('mainShayari').innerText=d.shayari||'रोह पंचायत का सम्मान, दिपु मेहता का अभिमान।';$('mainEvent').innerText=d.event||'जल्द अपडेट होगा।';$('mainNotice').innerText='📢 Roh Panchayat Notice : '+(d.notice||'कोई सूचना नहीं है');$('aboutText').innerText=d.about||'यह पंचायत सेवा और विकास के लिए समर्पित है।';$('servicesText').innerText=d.services||'जन समस्या समाधान'; if($('servicesText2'))$('servicesText2').innerText=d.services||'जन समस्या समाधान';$('service2').innerText=d.service2||'शिक्षा सहायता';$('service3').innerText=d.service3||'स्वास्थ्य सहायता';$('footerFB').href=d.fb||'#';$('footerIG').href=d.ig||'#';$('footerYT').href=d.yt||'#';if(d.photoUrl){$('profilePic').src=d.photoUrl;$('profilePic').classList.remove('hidden');$('defaultIcon').classList.add('hidden')}const pdfData={...d,pdfName1:d.pdfName1||defaultPDFName,pdfUrl1:d.pdfUrl1||defaultPDFUrl};renderGallery(d);renderPDFs(pdfData);renderTeam(d);fillAdmin(d);if(d.video){$('videoSource').src=d.video;$('mainVideo').load()}$('popupText').innerText=d.popup||'नई सूचना जल्द आएगी।';});
+$('sendFeedbackBtn').onclick=async()=>{let msg=$('fbMessage').value.trim(),st=$('fbStatus');if(!msg){st.className='status show bg-red-50 text-red-700';st.innerText='कृपया संदेश लिखें।';return}try{await push(feedbackRef,{name:$('fbName').value.trim()||'Anonymous',mobile:$('fbMobile').value.trim(),type:$('fbType').value,message:msg,time:new Date().toLocaleString('hi-IN')});$('fbName').value='';$('fbMobile').value='';$('fbMessage').value='';st.className='status show bg-green-50 text-green-700';st.innerText='धन्यवाद! आपका फीडबैक सफलतापूर्वक भेज दिया गया है।'}catch(e){st.className='status show bg-red-50 text-red-700';st.innerText='फीडबैक भेजा नहीं जा सका।'}};
+function getUserId(){let id=localStorage.getItem('visitorId');if(!id){id='user_'+Math.random().toString(36).slice(2,11);localStorage.setItem('visitorId',id)}return id}const uid=getUserId();const totalRef=ref(db,'visitors/total'),userRef=ref(db,'visitors/users/'+uid);get(userRef).then(s=>{if(!s.exists()){set(userRef,true);runTransaction(totalRef,n=>(n||0)+1)}});onValue(totalRef,s=>$('visitorCount').innerText=s.val()||0);const voteRef=ref(db,'votes/count'),userVoteRef=ref(db,'votes/users/'+uid);onValue(voteRef,s=>$('voteCount').innerText='Total Support: '+(s.val()||0));window.vote=async()=>{if((await get(userVoteRef)).exists()){alert('आप पहले ही समर्थन दे चुके हैं 👍');return}await runTransaction(voteRef,n=>(n||0)+1);await set(userVoteRef,true);alert('धन्यवाद! आपका समर्थन दर्ज हो गया 👍')};
+
+window.showRegister=()=>showPage('register');
+window.handleUserLogin=async()=>{
+  let email=$('userEmail').value.trim(), pass=$('userPassword').value, st=$('userLoginStatus');
+  if(!email||!pass){st.className='status show bg-red-50 text-red-700';st.innerText='Email और Password भरें।';return}
+  try{
+    await signInWithEmailAndPassword(auth,email,pass);
+    st.className='status show bg-green-50 text-green-700';
+    st.innerText='✅ Login सफल।';
+    let profile={};
+    try{
+      const ps=await get(ref(db,'users/'+auth.currentUser.uid));
+      if(ps.exists()) profile=ps.val()||{};
+    }catch(e){}
+    setLoggedInUser(auth.currentUser,profile);
+    setTimeout(()=>showPage('home'),500);
+  }catch(e){
+    st.className='status show bg-red-50 text-red-700';
+    st.innerText='गलत Email/Password या अकाउंट मौजूद नहीं है।';
+  }
+};
+
+function initials(name,email){
+  const text=(name||email||'U').trim();
+  const parts=text.split(/\s+/).filter(Boolean);
+  if(parts.length>=2) return (parts[0][0]+parts[1][0]).toUpperCase();
+  return text.slice(0,2).toUpperCase();
+}
+function setAvatar(elId, user, name){
+  const el=$(elId);
+  if(!el) return;
+  if(user && user.photoURL){
+    el.innerHTML=`<img src="${safe(user.photoURL)}" class="user-avatar-img" alt="User photo" onerror="this.parentElement.innerHTML='<span class="font-black">${safe(initials(name,user.email))}</span>'">`;
+  }else{
+    el.innerHTML=`<span class="font-black">${safe(initials(name,user?.email||''))}</span>`;
+  }
+}
+function setLoggedInUser(user, profile={}){
+  if(!user) return;
+  const name=profile.name || user.displayName || (user.email ? user.email.split('@')[0] : 'User');
+  const email=user.email || profile.email || '';
+  $('headerUserName').innerText=name;
+  $('headerUserEmail').innerText=email;
+  $('mobileUserName').innerText=name;
+  $('mobileUserEmail').innerText=email;
+  setAvatar('headerUserPhoto',user,name);
+  setAvatar('mobileUserPhoto',user,name);
+  $('loggedOutNav').classList.add('hidden');
+  $('loggedInNav').classList.remove('hidden');
+  $('loggedInNav').classList.add('flex');
+  $('mobileLoggedOut').classList.add('hidden');
+  $('mobileLoggedIn').classList.remove('hidden');
+}
+function setLoggedOutUser(){
+  $('loggedOutNav').classList.remove('hidden');
+  $('loggedInNav').classList.add('hidden');
+  $('loggedInNav').classList.remove('flex');
+  $('mobileLoggedOut').classList.remove('hidden');
+  $('mobileLoggedIn').classList.add('hidden');
+}
+window.logoutUser=async()=>{
+  try{
+    await signOut(auth);
+    setLoggedOutUser();
+    showPage('home');
+  }catch(e){
+    alert('Logout नहीं हो सका।');
+  }
+};
+
+window.handleRegister=async()=>{
+  const name=$('regName').value.trim();
+  const mobile=$('regMobile').value.trim();
+  const email=$('regEmail').value.trim().toLowerCase();
+  const pass=$('regPassword').value;
+  const st=$('registerStatus');
+
+  if(!name || !email || !pass){
+    st.className='status show bg-red-50 text-red-700';
+    st.innerText='कृपया नाम, Email और Password भरें।';
+    return;
+  }
+  if(pass.length<6){
+    st.className='status show bg-red-50 text-red-700';
+    st.innerText='Password कम से कम 6 अक्षर का होना चाहिए।';
+    return;
+  }
+
+  st.className='status show bg-blue-50 text-blue-700';
+  st.innerText='⏳ अकाउंट बनाया जा रहा है...';
+
+  try{
+    const cred=await createUserWithEmailAndPassword(auth,email,pass);
+
+    try{
+      await set(ref(db,'users/'+cred.user.uid),{
+        name:name,
+        mobile:mobile,
+        email:email,
+        createdAt:new Date().toISOString()
+      });
+    }catch(dbError){
+      console.warn('User profile save error:',dbError);
+    }
+
+    st.className='status show bg-green-50 text-green-700';
+    st.innerText='✅ अकाउंट सफलतापूर्वक बन गया।';
+    $('regName').value='';
+    $('regMobile').value='';
+    $('regEmail').value='';
+    $('regPassword').value='';
+    setTimeout(()=>showPage('home'),800);
+
+  }catch(e){
+    console.error('Firebase registration error:',e);
+    st.className='status show bg-red-50 text-red-700';
+
+    if(e.code==='auth/email-already-in-use'){
+      st.innerText='यह Email पहले से Firebase में registered है। कृपया Login करें।';
+    }else if(e.code==='auth/invalid-email'){
+      st.innerText='कृपया सही Email address डालें।';
+    }else if(e.code==='auth/weak-password'){
+      st.innerText='Password बहुत कमजोर है। कम से कम 6 अक्षर रखें।';
+    }else if(e.code==='auth/operation-not-allowed'){
+      st.innerText='Firebase में Email/Password Login चालू नहीं है। Firebase Console में इसे ON करें।';
+    }else if(e.code==='auth/network-request-failed'){
+      st.innerText='Internet/Firebase connection की समस्या है। Internet जांचें और फिर कोशिश करें।';
+    }else if(e.code==='auth/invalid-api-key' || e.code==='auth/api-key-not-valid.-please-pass-a-valid-api-key.'){
+      st.innerText='Firebase API Key की समस्या है। Firebase configuration जांचनी होगी।';
+    }else{
+      st.innerText='अकाउंट नहीं बन सका। Error: '+(e.code||'unknown');
+    }
+  }
+};
+
+window.resetUserPassword=async()=>{
+  let email=$('userEmail').value.trim(), st=$('userLoginStatus');
+  if(!email){st.className='status show bg-red-50 text-red-700';st.innerText='पहले Email भरें।';return}
+  try{
+    await sendPasswordResetEmail(auth,email);
+    st.className='status show bg-green-50 text-green-700';
+    st.innerText='✅ Password reset link Email पर भेज दिया गया है।';
+  }catch(e){
+    st.className='status show bg-red-50 text-red-700';
+    st.innerText='Password reset नहीं हो सका। Email जांचें।';
+  }
+};
+
+window.handleLogin=()=>{let email=$('userInput').value.trim(),pass=$('passInput').value,st=$('loginStatus');signInWithEmailAndPassword(auth,email,pass).then(c=>{if(c.user.uid!=='GYWE7KBlHjYxJ2PnTEERECesVES2')throw Error('notadmin');$('loginForm').classList.add('hidden');$('adminDashboard').classList.remove('hidden');loadFeedback()}).catch(()=>{st.className='status show bg-red-50 text-red-700';st.innerText='गलत Email/Password या Admin access नहीं है।'})};onAuthStateChanged(auth,async u=>{
+  if(u){
+    if(u.uid==='GYWE7KBlHjYxJ2PnTEERECesVES2'){
+      $('loginForm').classList.add('hidden');
+      $('adminDashboard').classList.remove('hidden');
+      loadFeedback();
+    }else{
+      let profile={};
+      try{
+        const ps=await get(ref(db,'users/'+u.uid));
+        if(ps.exists()) profile=ps.val()||{};
+      }catch(e){console.warn('User profile read error:',e)}
+      setLoggedInUser(u,profile);
+    }
+  }else{
+    setLoggedOutUser();
+  }
+});
+window.logoutAdmin=()=>signOut(auth).then(()=>location.reload());
+function loadFeedback(){onValue(feedbackRef,s=>{let d=s.val();if(!d){$('feedbackList').innerHTML='<div class="muted">अभी तक कोई feedback नहीं आया।</div>';return}let arr=Object.entries(d).reverse();$('feedbackList').innerHTML=arr.map(([id,f])=>`<div class="border rounded-2xl p-5"><div class="flex justify-between gap-3"><b>${safe(f.name||'Anonymous')}</b><button onclick="deleteFeedback('${id}')" class="text-red-600 font-bold">Delete</button></div><div class="text-blue-600 font-bold text-sm mt-1">${safe(f.type||'सुझाव')}</div><p class="font-semibold mt-3">${safe(f.message||'')}</p><div class="text-sm muted mt-3">📞 ${safe(f.mobile||'N/A')} • ${safe(f.time||'')}</div></div>`).join('')})}window.deleteFeedback=id=>{if(confirm('यह feedback delete करें?'))remove(ref(db,'feedback/'+id))};
+$('saveBtn').onclick=async()=>{
+  const st=$('saveStatus');
+  const data={
+    shayari:$('editShayari').value,
+    event:$('editEvent').value,
+    photoUrl:$('editPhotoUrl').value,
+    fb:$('fbLink').value,
+    ig:$('igLink').value,
+    yt:$('ytLink').value,
+    notice:$('editNotice').value,
+    popup:$('editPopup').value,
+    about:$('editAbout').value,
+    services:$('editServices').value,
+    video:$('videoLink').value
+  };
+  for(let i=1;i<=20;i++){
+    data['g'+i]=$('g'+i).value;
+    data['pdfName'+i]=$('pdfName'+i).value.trim();
+    data['pdfUrl'+i]=$('pdfUrl'+i).value.trim();
+  }
+  for(let i=1;i<=3;i++){
+    let m={
+      name:$('teamName'+i).value.trim(),
+      photo:$('teamPhoto'+i).value.trim(),
+      role:$('teamRole'+i).value.trim(),
+      fb:$('teamFB'+i).value.trim(),
+      whatsapp:$('teamWA'+i).value.trim(),
+      instagram:$('teamIG'+i).value.trim()
+    };
+    data['team'+i]=m.name?m:null;
+  }
+  st.className='status show bg-blue-50 text-blue-700';
+  st.innerText='⏳ Save हो रहा है...';
+  try{
+    await update(contentRef,data);
+    const verify=await get(contentRef);
+    if(!verify.exists()){
+      throw new Error('WRITE_VERIFY_FAILED');
+    }
+    st.className='status show bg-green-50 text-green-700';
+    st.innerText='✅ Save सफल — वेबसाइट अपडेट हो गई।';
+    showPage('home');
+  }catch(e){
+    console.error('Firebase save error:',e);
+    st.className='status show bg-red-50 text-red-700';
+    let msg=e?.code||e?.message||'unknown';
+    if(msg.includes('PERMISSION_DENIED') || msg.includes('permission-denied')){
+      st.innerText='❌ Firebase Permission Denied — Realtime Database Rules में write अनुमति दें।';
+    }else if(msg.includes('NETWORK')){
+      st.innerText='❌ Internet/Firebase connection की समस्या है।';
+    }else{
+      st.innerText='❌ Save नहीं हुआ: '+msg;
+    }
+  }
+};
+window.openImageModal=(src,caption)=>{$('modalImage').src=src;$('modalCaption').innerText=caption||'';$('imageModal').classList.add('show');document.body.style.overflow='hidden'};window.closeImageModal=(e)=>{if(!e||e.target.id==='imageModal'||e.currentTarget===e.target||!e.target.closest('.modal-panel')){$('imageModal').classList.remove('show');document.body.style.overflow=''}};window.showPage=id=>{document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');scrollTo({top:0,behavior:'smooth'})};window.toggleMenu=()=>{$('mobileMenu').classList.toggle('hidden')};window.toggleAI=()=>{$('aiBox').classList.toggle('show')};window.askAI=()=>{let input=$('aiInput'),msg=input.value.trim().toLowerCase();if(!msg)return;let reply='🙏 समझ नहीं आया। आप कार्यक्रम, संपर्क, शायरी, फोटो, शिकायत या सेवा पूछ सकते हैं।';if(msg.includes('नमस्ते')||msg.includes('hello')||msg.includes('hi'))reply='🙏 नमस्ते! मैं पंचायत AI सहायक हूँ।';else if(msg.includes('संपर्क')||msg.includes('फोन')||msg.includes('number'))reply='📞 संपर्क: +91 7488417922';else if(msg.includes('कार्यक्रम')||msg.includes('event'))reply=$('mainEvent').innerText;else if(msg.includes('शायरी'))reply=$('mainShayari').innerText;else if(msg.includes('शिकायत')||msg.includes('problem'))reply='⚠️ नीचे फीडबैक सेक्शन में शिकायत दर्ज करें।';else if(msg.includes('सेवा')||msg.includes('service'))reply=$('servicesText').innerText;else if(msg.includes('about')||msg.includes('परिचय'))reply=$('aboutText').innerText;else if(msg.includes('फोटो')||msg.includes('photo'))reply='📸 वेबसाइट के फोटो गैलरी सेक्शन में फोटो देखें।';$('aiChat').insertAdjacentHTML('beforeend',`<div class="chatmsg bg-slate-100"><b>आप:</b> ${safe(input.value)}</div><div class="chatmsg bg-blue-50 text-blue-900"><b>AI:</b> ${safe(reply)}</div>`);$('aiChat').scrollTop=$('aiChat').scrollHeight;input.value=''};
+setTimeout(()=>{$('loader').classList.add('hide');},700);setTimeout(()=>{if($('popupText').innerText&&$('popupText').innerText!=='नई सूचना जल्द आएगी।')$('popup').classList.add('show')},1800);
+</script>
+<script>const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('aiBox').classList.remove('show');document.getElementById('popup').classList.remove('show')}});</script>
+</body></html>
